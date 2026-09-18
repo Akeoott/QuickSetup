@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Solution>
-    <Folder Name="/src/">
-        <Project Path="src/QuickSetup.csproj" />
-    </Folder>
+  <Project Path="src/QuickSetup.csproj" />
 </Solution>

@@ -1,23 +1,29 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-    <PropertyGroup>
-        <OutputType>Exe</OutputType>
-        <TargetFramework>net10.0</TargetFramework>
-        <Nullable>enable</Nullable>
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
 
-        <AssemblyName>QuickSetup</AssemblyName>
-        <RootNamespace>QuickSetup</RootNamespace>
+    <AssemblyName>quicksetup</AssemblyName>
+    <RootNamespace>QuickSetup</RootNamespace>
 
-        <PublishAot>true</PublishAot>
-        <PublishSingleFile>true</PublishSingleFile>
-        <SelfContained>true</SelfContained>
-        <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+    <PublishAot>true</PublishAot>
+    <PublishSingleFile>true</PublishSingleFile>
+    <PublishSelfContained>true</PublishSelfContained>
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
 
-        <OptimizationPreference>Speed</OptimizationPreference>
-        <TrimMode>full</TrimMode>
-        <DebugType>none</DebugType>
-        <DebugSymbols>false</DebugSymbols>
-        <InvariantGlobalization>true</InvariantGlobalization>
-    </PropertyGroup>
+    <PublishTrimmed>true</PublishTrimmed>
+    <TrimMode>full</TrimMode>
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <InvariantGlobalization>true</InvariantGlobalization>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Mono.Options" />
+    <PackageReference Include="Spectre.Console" />
+  </ItemGroup>
 
 </Project>
