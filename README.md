@@ -1,2 +1,2 @@
-# quicksetup
-Quicksetup for blank Arch Linux machines.
+# QuickSetup
+QuickSetup for blank Arch Linux machines.
