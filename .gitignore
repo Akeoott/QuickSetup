@@ -36,6 +36,7 @@ ScaffoldingReadMe.txt
 *~
 CodeCoverage/
 .idea/
+*.diff
 
 # MSBuild Binary and Structured Log
 *.binlog
