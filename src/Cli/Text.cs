@@ -27,7 +27,6 @@ public static class Text
         [bold green]QuickSetup[/] — [dim]Configure once, forget later. Made for personal use.[/]
         [bold red]RUNNING THIS PROGRAM MAY BE DESTRUCTIVE![/]
 
-
         [bold aqua]WHAT IS QUICKSETUP?[/]
             A personal tool that installs a list of packages,
             and symlinks preconfigured application configs in [yellow]~/.config[/].
