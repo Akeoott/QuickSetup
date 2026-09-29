@@ -8,6 +8,7 @@
 
     <AssemblyName>quicksetup</AssemblyName>
     <RootNamespace>QuickSetup</RootNamespace>
+    <PublishDir>../dist/</PublishDir>
 
     <PublishAot>true</PublishAot>
     <PublishSingleFile>true</PublishSingleFile>
@@ -25,9 +26,5 @@
     <PackageReference Include="Mono.Options" />
     <PackageReference Include="Spectre.Console" />
   </ItemGroup>
-
-  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
-    <PublishDir>../dist/</PublishDir>
-  </PropertyGroup>
 
 </Project>
