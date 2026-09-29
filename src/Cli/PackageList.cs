@@ -1,5 +1,5 @@
-// Copyright (c) Akeoot / Akeoott <akeoot@pm.me>. Licensed under the AGPL-3.0 Licence.
-// See the LICENSE file in the repository root for full license text.
+// SPDX-FileCopyrightText: 2026-present Akeoot <akeoot@pm.me>
+// SPDX-License-Identifier: GPL-3.0-or-later
 
 namespace QuickSetup.Cli;
 

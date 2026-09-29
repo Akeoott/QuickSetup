@@ -1,5 +1,5 @@
-// Copyright (c) Akeoot / Akeoott <akeoot@pm.me>. Licensed under the AGPL-3.0 Licence.
-// See the LICENSE file in the repository root for full license text.
+// SPDX-FileCopyrightText: 2026-present Akeoot <akeoot@pm.me>
+// SPDX-License-Identifier: GPL-3.0-or-later
 
 using QuickSetup.Process;
 
@@ -7,7 +7,7 @@ namespace QuickSetup.Service;
 
 internal static class SystemService
 {
-    private static readonly string[] DotnetChannels = ["8.0", "9.0", "10.0"];
+    private static readonly string[] _dotnetChannels = ["8.0", "9.0", "10.0"];
 
     public static void Register(ProcessRunner runner)
     {
@@ -48,7 +48,7 @@ internal static class SystemService
 
             Utils.RunCapture("chmod", "+x", script);
 
-            return DotnetChannels
+            return _dotnetChannels
                 .Select(channel => Utils.RunInteractive("bash", script, "-c", channel))
                 .FirstOrDefault(code => code != 0);
         }

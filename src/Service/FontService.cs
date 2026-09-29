@@ -1,5 +1,5 @@
-// Copyright (c) Akeoot / Akeoott <akeoot@pm.me>. Licensed under the AGPL-3.0 Licence.
-// See the LICENSE file in the repository root for full license text.
+// SPDX-FileCopyrightText: 2026-present Akeoot <akeoot@pm.me>
+// SPDX-License-Identifier: GPL-3.0-or-later
 
 using QuickSetup.Cli;
 using QuickSetup.Process;
@@ -8,7 +8,7 @@ namespace QuickSetup.Service;
 
 internal static class FontService
 {
-    private const string InstallScript = """
+    private const string _installScript = """
         zip="$HOME/Code/backup/other/JetBrainsMono.zip"
         target="/usr/local/share/fonts/j"
 
@@ -29,7 +29,7 @@ internal static class FontService
     public static void Register(ProcessRunner runner, Settings settings)
     {
         runner.Command(StepCategory.Fonts, "Install JetBrains Mono Nerd Font",
-            "bash", ["-c", InstallScript],
+            "bash", ["-c", _installScript],
             condition: () => settings.RunDefault);
     }
 }

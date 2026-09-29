@@ -1,5 +1,5 @@
-// Copyright (c) Akeoot / Akeoott <akeoot@pm.me>. Licensed under the AGPL-3.0 Licence.
-// See the LICENSE file in the repository root for full license text.
+// SPDX-FileCopyrightText: 2026-present Akeoot <akeoot@pm.me>
+// SPDX-License-Identifier: GPL-3.0-or-later
 
 using QuickSetup.Cli;
 using QuickSetup.Process;
@@ -10,7 +10,7 @@ namespace QuickSetup.Service;
 
 internal static class ConfigService
 {
-    private static readonly (string Src, string Dest)[] Mappings =
+    private static readonly (string Src, string Dest)[] _mappings =
     [
         ("starship.toml",           ".config/starship.toml"),
         ("fish/config.fish",        ".config/fish/config.fish"),
@@ -52,7 +52,7 @@ internal static class ConfigService
 
         if (!Directory.Exists(origin)) return 1;
 
-        foreach (var (src, dest) in Mappings)
+        foreach (var (src, dest) in _mappings)
         {
             var srcFull = Path.Combine(origin, src);
             var destFull = Path.Combine(home, dest);

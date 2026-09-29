@@ -1,5 +1,5 @@
-// Copyright (c) Akeoot / Akeoott <akeoot@pm.me>. Licensed under the AGPL-3.0 Licence.
-// See the LICENSE file in the repository root for full license text.
+// SPDX-FileCopyrightText: 2026-present Akeoot <akeoot@pm.me>
+// SPDX-License-Identifier: GPL-3.0-or-later
 
 namespace QuickSetup.Cli;
 
@@ -40,14 +40,14 @@ public static class Text
             - Installs paru [dim](a better alternative to yay).[/]
             - Symlinks preconfigured configs into [yellow]~/.config[/].
             - Sets fish as the default shell.
-            - Adds common CLI tools from the AUR,
+            - Adds common CLI tools from the core/extra/aur repositories,
               [dim]such as nano, bat, eza, and ripgrep.[/]
 
             [bold green]Default[/] [bold yellow](--default)[/] — [dim]Includes Minimal:[/]
             - Installs the JetBrains Mono Nerd Font globally.
             - Installs desktop apps such as VS Code, Spotify, Konsole, Dolphin, Discord, and more.
             - Installs Flatpak and FUSE for Flathub apps and AppImages.
-            - Adds more common AUR packages.
+            - Installs more common programs from their respective repositories.
             - Pulls in required dependencies,
               [dim]such as python-websockets, qt6-wayland, and qt6-websockets.[/]
 

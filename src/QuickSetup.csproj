@@ -26,4 +26,8 @@
     <PackageReference Include="Spectre.Console" />
   </ItemGroup>
 
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <PublishDir>../dist/</PublishDir>
+  </PropertyGroup>
+
 </Project>
