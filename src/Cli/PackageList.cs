@@ -25,7 +25,7 @@ public static class PackageList
         "konsole",
         "python-websockets",
         "qt6-wayland", "qt6-websockets",
-        "spotify-edge", "steam",
+        "spotifast-bin", "steam",
         "vlc", "vlc-plugin-ffmpeg","vlc-plugin-smb",
         "vlc-plugin-x264","vlc-plugin-x265"
     ];
@@ -34,7 +34,6 @@ public static class PackageList
         "appimage-builder",
         "docker",
         "linuxdeploy", "linuxdeploy-plugin-qt",
-        "jetbrains-toolbox",
         "webkit2gtk-4.1"
     ];
 }
