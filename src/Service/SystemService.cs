@@ -38,6 +38,9 @@ internal static class SystemService
 
     private static int InstallDotnet()
     {
+        if (Utils.RunCapture("which", "dotnet").ExitCode == 0)
+            return 0;
+
         var tmp = Directory.CreateTempSubdirectory().FullName;
         try
         {
@@ -60,8 +63,8 @@ internal static class SystemService
 
     private static int InstallParu()
     {
-        if (Utils.RunCapture("which", "paru").ExitCode == 0) return 0;
-
+        if (Utils.RunCapture("which", "paru").ExitCode == 0)
+            return 0;
 
         var tmp = Directory.CreateTempSubdirectory().FullName;
         try

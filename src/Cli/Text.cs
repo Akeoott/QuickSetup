@@ -17,6 +17,7 @@ public static class Text
             [bold yellow]-m, --minimal[/]   Install CLI tools and core setup only.
             [bold yellow]-d, --default[/]   Install desktop apps, dependencies, and more. [dim]Includes --minimal.[/]
             [bold yellow]-D, --dev[/]       Configure Docker and install useful dev tools. [dim]Includes --minimal.[/]
+            [bold yellow]-n, --nvidia[/]    Automatically configure system env and initramfs to use Nvidia gpu's (specifically RTX 3070 ti)
             [bold yellow]-i, --info[/]      Explain QuickSetup and what each preset installs.
             [bold yellow]-h, --help[/]      Show this help.
         """;

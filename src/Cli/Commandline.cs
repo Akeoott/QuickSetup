@@ -14,6 +14,7 @@ internal static class Commandline
         var isDefault = false;
         var isMinimal = false;
         var isDev = false;
+        var isNvidia = false;
 
         var showInfo = false;
         var showHelp = false;
@@ -23,6 +24,7 @@ internal static class Commandline
             { "m|minimal", _ => isMinimal = true },
             { "d|default", _ => isDefault = true },
             { "D|dev",     _ => isDev     = true },
+            { "n|nvidia",  _ => isNvidia  = true },
             { "i|info",    _ => showInfo  = true },
             { "h|help",    _ => showHelp  = true }
         };
@@ -51,10 +53,13 @@ internal static class Commandline
             (isMinimal ? 1 : 0) +
             (isDev ? 1 : 0);
 
+        if (selectedCount == 0)
+            Fail("One of --minimal, --default, or --dev is required.");
+
         if (selectedCount > 1)
             Fail("Only one of --minimal, --default, or --dev can be specified.");
 
-        return new Settings(isDefault, isMinimal, isDev);
+        return new Settings(isDefault, isMinimal, isDev, isNvidia);
     }
 
     private static void ShowHelpAndExit()

@@ -10,6 +10,18 @@ namespace QuickSetup.Service;
 
 internal static class ConfigService
 {
+    /// <summary>
+    /// Writes the Nvidia vendor var to /etc/environment
+    /// </summary>
+    private static readonly string _nvidiaEnv = "__EGL_VENDOR_LIBRARY_FILENAMES=/usr/share/glvnd/egl_vendor.d/10_nvidia.json";
+    private static readonly string _sysEnvironmentConfig = "/etc/environment";
+
+    /// <summary>
+    /// Writes the required modules to /etc/mkinitcpio.conf at MODULES=(...)
+    /// </summary>
+    private static readonly string _nvidiaModules = "nvidia nvidia_modeset nvidia_uvm nvidia_drm";
+    private static readonly string _sysInitramfsConfig = "/etc/mkinitcpio.conf";
+
     private static readonly (string Src, string Dest)[] _mappings =
     [
         ("starship.toml",           ".config/starship.toml"),
@@ -21,6 +33,19 @@ internal static class ConfigService
 
     public static void Register(ProcessRunner runner, Settings settings)
     {
+        if (settings.SetNvidia)
+        {
+            runner.Command(StepCategory.Configuration, "Add Nvidia EGL vendor variable to /etc/environment",
+                "sudo", ["bash", "-c",
+            $"grep -qF '{_nvidiaEnv}' {_sysEnvironmentConfig} || echo '{_nvidiaEnv}' >> {_sysEnvironmentConfig}"]);
+
+            runner.Command(StepCategory.Configuration, "Set Nvidia modules in /etc/mkinitcpio.conf",
+                "sudo", ["sed", "-i", $"s|^MODULES=.*|MODULES=({_nvidiaModules})|", _sysInitramfsConfig]);
+
+            runner.Command(StepCategory.Configuration, "Regenerate initramfs",
+                "sudo", ["mkinitcpio", "-P"]);
+        }
+
         runner.Action(StepCategory.Configuration, "Set fish as default shell", SetFishShell);
 
         runner.Action(StepCategory.Configuration, "Deploy user configs", DeployConfigs);

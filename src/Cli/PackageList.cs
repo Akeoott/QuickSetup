@@ -33,6 +33,7 @@ public static class PackageList
     internal static readonly string[] Dev = [
         "appimage-builder",
         "docker",
+        "github-cli",
         "linuxdeploy", "linuxdeploy-plugin-qt",
         "webkit2gtk-4.1"
     ];
